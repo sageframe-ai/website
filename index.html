@@ -55,6 +55,14 @@
 
     <!-- Style Overrides -->
     <style>
+      @media (forced-colors: active) {
+        * {
+          outline: transparent !important;
+          background: Window !important;
+          color: WindowText !important;
+        }
+      }
+
       g#compass {
         transform-box: fill-box;
         transform-origin: center;
@@ -98,7 +106,7 @@
     class="font-sans bg-gray-100 text-gray-900 min-h-screen flex flex-col justify-between"
   >
     <!-- Main Content -->
-    <div class="flex-grow flex items-center justify-center px-8 py-12">
+    <main role="main" class="flex-grow flex items-center justify-center px-8 py-12">
       <div
         class="max-w-6xl w-full flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-12"
       >
@@ -123,10 +131,13 @@
             class="flex flex-col sm:flex-row gap-3"
             action="https://formspree.io/f/xjkrgyqq"
             method="POST"
+            role="form"
+            aria-label="Newsletter Signup Form"
           >
             <input
               type="email"
               name="email"
+              aria-label="Email address"
               placeholder="you@example.com"
               class="px-4 py-2 border border-gray-300 rounded-md w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-gray-800"
               required
@@ -147,24 +158,25 @@
           <div
             id="logo-container"
             class="w-40 sm:w-56 md:w-72 lg:w-[24rem] h-auto"
+            role="img"
           >
             <img src="/images/logo.svg" alt="Sageframe Logo" />
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer class="text-center px-6 pb-4">
       <blockquote
-        class="font-serif text-sm text-gray-500 italic leading-relaxed tracking-normal max-w-3xl mx-auto"
+        class="font-serif text-sm text-gray-600 italic leading-relaxed tracking-normal max-w-3xl mx-auto"
       >
         “Success is not merely a matter of chance—it becomes virtually
         inevitable when the essential variables are correctly identified,
         ordered, and acted upon with strategic precision.”
-        <span class="text-blue-500">— Law 47, The Law of Probability</span>
+        <span class="text-blue-600">— Law 47, The Law of Probability</span>
       </blockquote>
-      <p class="text-xs text-gray-400 mt-2">
+      <p class="text-xs text-gray-600 mt-2">
         © 2025 Sageframe.ai by Starbuilders Consulting LTD. All rights reserved.
       </p>
     </footer>
