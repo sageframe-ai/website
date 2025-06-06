@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Open Graph Meta (Facebook, LinkedIn, etc.) -->
+    <!-- Meta for Social Sharing -->
     <meta property="og:title" content="Sageframe — Strategic Access Only" />
     <meta
       property="og:description"
       content="A decision system built on the 56 Bellwether Laws. Now entering selective deployment."
     />
-    <meta property="og:image" content="https://sageframe.ai/images/preview.png" />
+    <meta
+      property="og:image"
+      content="https://sageframe.ai/images/preview.png"
+    />
     <meta property="og:url" content="https://sageframe.ai" />
     <meta property="og:type" content="website" />
-
-    <!-- Twitter Card Meta -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sageframe — Strategic Access Only" />
     <meta
       name="twitter:description"
       content="A decision system built on the 56 Bellwether Laws. Now entering selective deployment."
     />
-    <meta name="twitter:image" content="https://sageframe.ai/images/preview.png" />
+    <meta
+      name="twitter:image"
+      content="https://sageframe.ai/images/preview.png"
+    />
 
+    <!-- Page Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sageframe — Strategic Access Only</title>
@@ -28,19 +33,15 @@
       content="Sageframe is a private decision system built on the 56 Bellwether Laws. Strategic access is being deployed to aligned decision-makers only."
     />
 
-    <!-- Fonts: Inter (sans), Merriweather (serif for blockquotes) -->
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:ital,wght@1,400&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Favicon -->
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind font config -->
     <script>
       tailwind.config = {
         theme: {
@@ -51,6 +52,67 @@
         },
       };
     </script>
+
+    <!-- Style Overrides -->
+    <style>
+      g#compass {
+        transform-box: fill-box;
+        transform-origin: center;
+        transition: transform 0.25s ease-out;
+      }
+
+      g#compass.calibrate {
+        animation: calibration-flash 0.4s ease-out;
+      }
+
+      @keyframes calibration-flash {
+        0% {
+          filter: drop-shadow(0 0 0px #0000);
+          transform: scale(1);
+        }
+        20% {
+          filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.12));
+          transform: scale(1.025);
+        }
+        60% {
+          filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.05));
+          transform: scale(0.995);
+        }
+        100% {
+          filter: drop-shadow(0 0 0px #0000);
+          transform: scale(1);
+        }
+      }
+
+      circle {
+        transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+        transform-origin: center;
+        transform-box: fill-box;
+      }
+
+      circle.flash {
+        animation: pulse-signal 0.25s ease-out;
+      }
+
+      @keyframes pulse-signal {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.2;
+          transform: scale(1.6);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      svg {
+        overflow: visible;
+      }
+    </style>
   </head>
 
   <body
@@ -69,13 +131,11 @@
           <h2 class="text-2xl font-semibold text-gray-800 leading-relaxed mb-4">
             Selective deployment is underway.
           </h2>
-
           <p class="text-lg text-gray-700 leading-relaxed mb-4">
             Aligned leaders are being granted first access to Sageframe—a
-            decision system engineered from the 56 Bellwether Laws to produce
-            lawful clarity under pressure.
+            decision system engineered from 56 ethical success principles to
+            produce lawful clarity under pressure.
           </p>
-
           <p class="italic text-base text-gray-600 mb-6">
             Lawful clarity for high-leverage thinkers.
           </p>
@@ -105,16 +165,17 @@
         <div
           class="md:w-1/2 flex justify-center md:justify-end md:items-start md:-mt-8"
         >
-          <img
-            src="/images/logo.svg"
-            alt="Sageframe Logo"
+          <div
+            id="logo-container"
             class="w-40 sm:w-56 md:w-72 lg:w-[24rem] h-auto"
-          />
+          >
+            <img src="/images/logo.svg" alt="Sageframe Logo" />
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Footer Quote -->
+    <!-- Footer -->
     <footer class="text-center px-6 pb-4">
       <blockquote
         class="font-serif text-sm text-gray-500 italic leading-relaxed tracking-normal max-w-3xl mx-auto"
@@ -128,5 +189,110 @@
         © 2025 Sageframe.ai by Starbuilders Consulting LTD. All rights reserved.
       </p>
     </footer>
+
+    <!-- JS Logic -->
+    <script>
+      const container = document.getElementById("logo-container");
+
+      fetch("/images/logo.svg")
+        .then((response) => response.text())
+        .then((svgText) => {
+          const parser = new DOMParser();
+          const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
+          const svg = svgDoc.querySelector("svg");
+
+          svg.removeAttribute("width");
+          svg.removeAttribute("height");
+          svg.classList.add(
+            "w-40",
+            "sm:w-56",
+            "md:w-72",
+            "lg:w-[24rem]",
+            "h-auto"
+          );
+
+          container.innerHTML = "";
+          container.appendChild(svg);
+
+          const compass = svg.querySelector("g#compass");
+          const allCircles = svg.querySelectorAll("g#leaves circle");
+
+          // Mouse tracking + flash-speed logic
+          let lastMouseX = null;
+          let lastMouseY = null;
+          let lastMoveTime = performance.now();
+          let movementSpeed = 0;
+          let lastAngle = 0;
+
+          function updateCompass(e) {
+            if (!compass) return;
+
+            const now = performance.now();
+            const rect = container.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const dx = e.clientX - centerX;
+            const dy = e.clientY - centerY;
+
+            let targetAngle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+            // Normalize rotation delta to shortest path
+            let delta = targetAngle - lastAngle;
+            if (delta > 180) delta -= 360;
+            if (delta < -180) delta += 360;
+            const smoothAngle = lastAngle + delta;
+            lastAngle = smoothAngle;
+
+            compass.style.transform = `rotate(${smoothAngle}deg)`;
+
+            // Track mouse speed
+            if (lastMouseX !== null && lastMouseY !== null) {
+              const dist = Math.sqrt(
+                Math.pow(e.clientX - lastMouseX, 2) +
+                  Math.pow(e.clientY - lastMouseY, 2)
+              );
+              const timeDiff = now - lastMoveTime;
+              movementSpeed = dist / Math.max(timeDiff, 1);
+            }
+
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+            lastMoveTime = now;
+          }
+
+          document.addEventListener("mousemove", updateCompass);
+
+          function flashRandomCircles(count = 6) {
+            if (!allCircles.length) return;
+
+            allCircles.forEach((c) => c.classList.remove("flash"));
+
+            const pool = [...allCircles];
+            const flashTargets = [];
+
+            for (let i = 0; i < count && pool.length; i++) {
+              const idx = Math.floor(Math.random() * pool.length);
+              flashTargets.push(pool.splice(idx, 1)[0]);
+            }
+
+            flashTargets.forEach((circle, i) => {
+              const delay = 200 + i * (200 + Math.random() * 200); // 200–600ms between flashes
+              setTimeout(() => {
+                circle.classList.add("flash");
+              }, delay);
+            });
+          }
+
+          function flashLoop() {
+            const normalized = Math.min(movementSpeed / 0.5, 1); // max out at 0.5 px/ms
+            const delay = 1600 - normalized * 600;
+
+            flashRandomCircles(6);
+            setTimeout(flashLoop, delay);
+          }
+
+          flashLoop(); // Begin loop
+        });
+    </script>
   </body>
 </html>
