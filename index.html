@@ -264,9 +264,9 @@
 
           function flashLoop() {
             const normalized = Math.min(movementSpeed / 0.5, 1); // max out at 0.5 px/ms
-            const delay = 1600 - normalized * 600;
+            const delay = 1800 - normalized * 300;
 
-            flashRandomCircles(6);
+            flashRandomCircles(3);
             setTimeout(flashLoop, delay);
           }
 
