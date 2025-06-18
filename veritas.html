@@ -43,12 +43,20 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script>
       tailwind.config = {
         theme: {
           fontFamily: {
             sans: ["Inter", "sans-serif"],
             serif: ["Merriweather", "serif"],
           },
+        },
+        content: {
+          relative: true,
+          transform: (content) => content.replace(/taos:/g, ""),
+          files: ["./src/*.{html,js}"],
         },
       };
     </script>
@@ -124,23 +132,24 @@
       >
         <!-- LEFT: Copy and CTA -->
         <div class="md:w-1/2 flex flex-col justify-center">
-          <h1 class="text-4xl font-extrabold tracking-tight leading-snug mb-2">
+          <h1 class="text-4xl font-extrabold tracking-tight leading-snug mb-2 taos:opacity-0 taos:translate-y-[40px] duration-[800ms]" data-taos-offset="200">
             VERITAS
           </h1>
-          <h2 class="text-2xl font-semibold text-gray-800 leading-relaxed mb-4">
+          <h2 class="text-2xl font-semibold text-gray-800 leading-relaxed mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[100ms]" data-taos-offset="200">
             The only AI decision engine built on the 56 Bellwether Laws.
           </h2>
-          <p class="text-lg text-gray-700 leading-relaxed mb-4">
+          <p class="text-lg text-gray-700 leading-relaxed mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[200ms]" data-taos-offset="200">
             VERITAS helps you isolate the next rational move—fast. It applies
             tested laws of clarity, leverage, and sequencing to real decisions,
             with zero fluff.
           </p>
-          <p class="text-base text-gray-600 italic mb-6">
+          <p class="text-base text-gray-600 italic mb-6 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[300ms]" data-taos-offset="200">
             Strategic clarity for high-leverage minds, on demand.
           </p>
 
           <form
-            class="flex flex-col sm:flex-row gap-3"
+            class="flex flex-col sm:flex-row gap-3 taos:opacity-0 taos:scale-95 duration-[700ms] delay-[400ms]"
+            data-taos-offset="200"
             action="https://buy.stripe.com/4gM4gz0D7bLl3kK5810gw00"
             method="GET"
             role="form"
@@ -153,7 +162,7 @@
               Discover True Decision Clarity
             </button>
           </form>
-          <p class="text-sm text-gray-600 mt-4">
+          <p class="text-sm text-gray-600 mt-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[500ms]" data-taos-offset="200">
             Already subscribed?
             <a
               href="https://billing.stripe.com/p/login/4gM4gz0D7bLl3kK5810gw00"
@@ -177,13 +186,20 @@
         </div>
       </div>
     </section>
+    <!-- Scroll Down Indicator -->
+      <div class="flex flex-col items-center mt-4 animate-bounce" aria-hidden="true">
+        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="text-xs text-gray-400 mt-1">Scroll down</span>
+      </div>
     <section
       class="bg-gray-50 flex-grow flex flex-col items-center justify-center px-8 py-12"
     >
-      <h1 class="text-4xl font-extrabold tracking-tight leading-snug mb-2">
+      <h1 class="text-4xl font-extrabold tracking-tight leading-snug mb-2 taos:opacity-0 taos:translate-y-[40px] duration-[800ms]" data-taos-offset="200">
         Unlock the Power of VERITAS
       </h1>
-      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+      <p class="text-lg text-gray-700 leading-relaxed mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[100ms]" data-taos-offset="200">
         VERITAS applies the 56 Bellwether Laws to help you cut through noise,
         isolate constraints, and make the next lawful move—fast.
       </p>
@@ -191,7 +207,7 @@
       <div class="max-w-6xl mx-auto text-center">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 text-left">
           <!-- Tile 1 -->
-          <div class="p-6 flex flex-col items-center text-left">
+          <div class="p-6 flex flex-col items-center text-left taos:opacity-0 taos:translate-y-[40px] duration-[700ms]" data-taos-offset="250">
             <img
               src="images/undraw_stepping-up_4q3b.svg"
               alt="Isolate the Right Move"
@@ -212,7 +228,7 @@
           </div>
 
           <!-- Tile 2 -->
-          <div class="p-6 flex flex-col items-center text-left">
+          <div class="p-6 flex flex-col items-center text-left taos:opacity-0 taos:translate-y-[40px] duration-[700ms] delay-[100ms]" data-taos-offset="250">
             <img
               src="images/undraw_time-management_fedt.svg"
               alt="Compress Years into Days"
@@ -232,7 +248,7 @@
           </div>
 
           <!-- Tile 3 -->
-          <div class="p-6 flex flex-col items-center text-left">
+          <div class="p-6 flex flex-col items-center text-left taos:opacity-0 taos:translate-y-[40px] duration-[700ms] delay-[200ms]" data-taos-offset="250">
             <img
               src="images/undraw_lightbulb-moment_c8jn.svg"
               alt="Make Clarity a System"
@@ -255,10 +271,10 @@
     </section>
     <section class="py-20 px-6 sm:px-10 lg:px-20">
       <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-extrabold text-gray-900 mb-4">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms]" data-taos-offset="200">
           Lawful Outcomes. Real Mavens.
         </h2>
-        <p class="text-left text-lg text-gray-700 mb-12">
+        <p class="text-left text-lg text-gray-700 mb-12 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[100ms]" data-taos-offset="200">
           VERITAS doesn't inspire—<span class="italic"
             >it aligns, compresses, and replicates.</span
           >
@@ -270,7 +286,8 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
           <!-- Testimonial 1 -->
           <div
-            class="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between"
+            class="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between taos:opacity-0 taos:translate-y-[40px] duration-[700ms]"
+            data-taos-offset="250"
           >
             <blockquote class="text-gray-800 italic mb-4">
               “Working with Veritas has been a powerful accelerator in both my
@@ -293,14 +310,17 @@
               </div>
               <div>
                 <p class="font-semibold text-gray-900">Cynthia Davis</p>
-                <p class="text-sm text-gray-600">Radiant Blue Capital, Florida</p>
+                <p class="text-sm text-gray-600">
+                  Radiant Blue Capital, Florida
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Testimonial 2 -->
           <div
-            class="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between"
+            class="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between taos:opacity-0 taos:translate-y-[40px] duration-[700ms] delay-[100ms]"
+            data-taos-offset="250"
           >
             <blockquote class="text-gray-800 italic mb-4">
               “Decisions that used to take me days now take minutes—with 10x the
@@ -321,7 +341,8 @@
 
           <!-- Testimonial 3 -->
           <div
-            class="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between"
+            class="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between taos:opacity-0 taos:translate-y-[40px] duration-[700ms] delay-[200ms]"
+            data-taos-offset="250"
           >
             <blockquote class="text-gray-800 italic mb-4">
               “It’s not advice. It’s lawful compression. My team now runs every
@@ -346,19 +367,21 @@
     </section>
     <section class="bg-dark text-white py-20 px-6 sm:px-10 lg:px-20">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-extrabold mb-4">Join VERITAS</h2>
-        <p class="text-left text-lg text-gray-300 mb-6">
+        <h2 class="text-3xl font-extrabold mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms]" data-taos-offset="200">Join VERITAS</h2>
+        <p class="text-left text-lg text-gray-300 mb-6 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[100ms]" data-taos-offset="200">
           VERITAS helps serious decision-makers reduce fog, find signal fast,
           and act lawfully under pressure.
         </p>
         <p
-          class="text-left md:text-center text-base text-gray-400 italic mb-10"
+          class="text-left md:text-center text-base text-gray-400 italic mb-10 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[200ms]"
+          data-taos-offset="200"
         >
           Bellwether Mavens only. No public tier. No passive users.
         </p>
 
         <div
-          class="bg-gray-100 text-gray-800 rounded-xl p-6 max-w-md mx-auto mb-12 shadow-sm"
+          class="bg-gray-100 text-gray-800 rounded-xl p-6 max-w-md mx-auto mb-12 shadow-sm taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[300ms]"
+          data-taos-offset="200"
         >
           <p class="text-xl font-semibold text-gray-900 mb-2">Membership</p>
           <p class="text-3xl font-extrabold text-green-500 mb-4">
@@ -556,5 +579,6 @@
           flashLoop(); // Begin loop
         });
     </script>
+    <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
   </body>
 </html>
