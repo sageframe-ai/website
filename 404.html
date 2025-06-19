@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page Not Found | Sageframe</title>
+    <meta name="description" content="404 error page for Sageframe. The page you are looking for does not exist." />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:ital,wght@1,400&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            serif: ["Merriweather", "serif"],
+          },
+        },
+      };
+    </script>
+    <style>
+      @media (forced-colors: active) {
+        * {
+          outline: transparent !important;
+          background: Window !important;
+          color: WindowText !important;
+        }
+      }
+      svg {
+        overflow: visible;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-100 text-gray-900 min-h-screen flex flex-col justify-between">
+    <main role="main" class="flex-grow flex items-center justify-center px-8 py-12">
+      <div class="max-w-3xl w-full flex flex-col md:flex-row items-center justify-center gap-12">
+        <!-- LEFT: 404 Copy -->
+        <div class="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+          <h1 class="text-6xl font-extrabold tracking-tight leading-snug mb-2 text-gray-800">404</h1>
+          <h2 class="text-2xl font-semibold text-gray-800 leading-relaxed mb-4">Page Not Found</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-4">
+            The page you’re looking for doesn’t exist or has been moved.
+          </p>
+          <a href="/" class="inline-block mt-4 px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800 font-semibold transition">Return Home</a>
+        </div>
+        <!-- RIGHT: Logo or Illustration -->
+        <div class="md:w-1/2 flex justify-center md:justify-end md:items-start md:-mt-8">
+          <div id="logo-container" class="w-40 sm:w-56 md:w-72 lg:w-[24rem] h-auto" role="img">
+            <img src="/images/logo.svg" alt="Sageframe Logo" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-center px-6 py-4">
+      <blockquote class="font-serif text-sm text-gray-600 italic leading-relaxed tracking-normal max-w-3xl mx-auto">
+        “Success is not merely a matter of chance—it becomes virtually inevitable when the essential variables are correctly identified, ordered, and acted upon with strategic precision.”
+        <span class="text-blue-600">— Law 47, The Law of Probability</span>
+      </blockquote>
+      <p class="text-xs text-gray-600 mt-2">© 2025 Sageframe.ai by Starbuilders Consulting LTD. All rights reserved.</p>
+    </footer>
+    <script>
+      // Inline SVG logic for logo (optional, for consistency with index.html)
+      const container = document.getElementById("logo-container");
+      fetch("/images/logo.svg")
+        .then((response) => response.text())
+        .then((svgText) => {
+          const parser = new DOMParser();
+          const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
+          const svg = svgDoc.querySelector("svg");
+          svg.removeAttribute("width");
+          svg.removeAttribute("height");
+          svg.classList.add(
+            "w-40",
+            "sm:w-56",
+            "md:w-72",
+            "lg:w-[24rem]",
+            "h-auto"
+          );
+          container.innerHTML = "";
+          container.appendChild(svg);
+        });
+    </script>
+  </body>
+</html>
