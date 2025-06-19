@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /veritas/instructions.html
+Disallow: /images/
