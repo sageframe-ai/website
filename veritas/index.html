@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta for Social Sharing -->
+    <meta property="og:title" content="VERITAS — For Bellwether Mavens" />
+    <meta
+      property="og:description"
+      content="A decision system built on the 56 Bellwether Laws. Now available exclusively to Bellwether Mavens."
+    />
+    <meta
+      property="og:image"
+      content="https://sageframe.ai/images/preview.png"
+    />
+    <meta property="og:url" content="https://sageframe.ai" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VERITAS — For Bellwether Mavens" />
+    <meta
+      name="twitter:description"
+      content="A decision system built on the 56 Bellwether Laws. Now available exclusively to Bellwether Mavens."
+    />
+    <meta
+      name="twitter:image"
+      content="https://sageframe.ai/images/preview.png"
+    />
+
+    <!-- Page Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VERITAS — For Bellwether Mavens</title>
+    <meta
+      name="description"
+      content="VERITAS is a private decision system built on the 56 Bellwether Laws. Now available exclusively to Bellwether Mavens."
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:ital,wght@1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="https://unpkg.com/taos@1.0.5/dist/taos.js" defer></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            serif: ["Merriweather", "serif"],
+          },
+        },
+        content: {
+          relative: true,
+          transform: (content) => content.replace(/taos:/g, ""),
+          files: ["./src/*.{html,js}"],
+        },
+      };
+    </script>
+
+    <!-- Style Overrides -->
+    <style>
+      @media (forced-colors: active) {
+        * {
+          outline: transparent !important;
+          background: Window !important;
+          color: WindowText !important;
+        }
+      }
+
+      g#compass {
+        transform-box: fill-box;
+        transform-origin: center;
+        transition: transform 0.25s ease-out;
+      }
+
+      circle {
+        transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+        transform-origin: center;
+        transform-box: fill-box;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        circle.flash {
+          animation: pulse-signal 0.25s ease-out;
+        }
+
+        @keyframes pulse-signal {
+          0% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.2;
+            transform: scale(1.6);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
+
+      svg {
+        overflow: visible;
+      }
+
+      .bg-dark {
+        background-color: #101d23;
+        color: white;
+      }
+
+      .bg-primary {
+        background-color: #a48328;
+      }
+    </style>
+  </head>
+
+  <body
+    class="font-sans bg-gray-100 text-gray-900 min-h-screen flex flex-col justify-between taos-pre-init"
+    style="opacity: 0; transition: opacity 0.2s"
+    onload="document.body.style.opacity=1;"
+  >
+    <!-- Main Content -->
+    <section
+      class="flex-grow flex items-center justify-center px-8 py-12"
+      style="height: 90vh"
+    >
+      <div
+        class="max-w-6xl w-full flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-12"
+      >
+        <!-- LEFT: Copy and CTA -->
+        <div class="md:w-1/2 flex flex-col justify-center">
+          <h1
+            class="text-4xl font-extrabold tracking-tight leading-snug mb-2 taos:opacity-0 taos:translate-y-[40px] duration-[800ms]"
+            data-taos-offset="0"
+            data-taos-once="true"
+          >
+            VERITAS
+          </h1>
+          <h2
+            class="text-2xl font-semibold text-gray-800 leading-relaxed mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[100ms]"
+            data-taos-offset="0"
+            data-taos-once="true"
+          >
+            The only AI decision engine built on the 56 Bellwether Laws.
+          </h2>
+          <p
+            class="text-lg text-gray-700 leading-relaxed mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[200ms]"
+            data-taos-offset="0"
+            data-taos-once="true"
+          >
+            VERITAS helps you isolate the next rational move—fast. It applies
+            tested laws of clarity, leverage, and sequencing to real decisions,
+            with zero fluff.
+          </p>
+          <p
+            class="text-base text-gray-600 italic mb-6 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[300ms]"
+            data-taos-offset="0"
+            data-taos-once="true"
+          >
+            Strategic clarity for high-leverage minds, on demand.
+          </p>
+
+          <form
+            class="flex flex-col sm:flex-row gap-3 taos:opacity-0 taos:scale-95 duration-[700ms] delay-[400ms]"
+            data-taos-offset="0"
+            data-taos-once="true"
+            action="https://buy.stripe.com/4gM4gz0D7bLl3kK5810gw00"
+            method="GET"
+            role="form"
+            aria-label="Enrol Now"
+          >
+            <button
+              type="submit"
+              class="px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800"
+            >
+              Discover True Decision Clarity
+            </button>
+          </form>
+          <p
+            class="text-sm text-gray-600 mt-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[500ms]"
+            data-taos-offset="0"
+            data-taos-once="true"
+          >
+            Already subscribed?
+            <a
+              href="https://billing.stripe.com/p/login/4gM4gz0D7bLl3kK5810gw00"
+              class="text-blue-600 hover:underline"
+              >Manage Billing</a
+            >
+          </p>
+        </div>
+
+        <!-- RIGHT: Logo -->
+        <div
+          class="md:w-1/2 flex justify-center md:justify-end md:items-start md:-mt-8"
+        >
+          <div
+            id="logo-container"
+            class="w-40 sm:w-56 md:w-72 lg:w-[24rem] h-auto"
+            role="img"
+          >
+            <img src="/images/logo.svg" alt="Sageframe Logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Scroll Down Indicator -->
+    <div
+      class="flex flex-col items-center mt-4 animate-bounce"
+      aria-hidden="true"
+    >
+      <svg
+        class="w-6 h-6 text-gray-400"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
+      <span class="text-xs text-gray-400 mt-1">Scroll down</span>
+    </div>
+    <section
+      class="bg-gray-50 flex-grow flex flex-col items-center justify-center px-8 py-12"
+    >
+      <h1
+        class="text-4xl font-extrabold tracking-tight leading-snug mb-2 taos:opacity-0 taos:translate-y-[40px] duration-[800ms]"
+        data-taos-offset="200"
+      >
+        Unlock the Power of VERITAS
+      </h1>
+      <p
+        class="text-lg text-gray-700 leading-relaxed mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[100ms]"
+        data-taos-offset="200"
+      >
+        VERITAS applies the 56 Bellwether Laws to help you cut through noise,
+        isolate constraints, and make the next lawful move—fast.
+      </p>
+      <!-- TODO Add features here -->
+      <div class="max-w-6xl mx-auto text-center">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 text-left">
+          <!-- Tile 1 -->
+          <div
+            class="p-6 flex flex-col items-center text-left taos:opacity-0 taos:translate-y-[40px] duration-[700ms]"
+            data-taos-offset="250"
+          >
+            <img
+              src="/images/undraw_stepping-up_4q3b.svg"
+              alt="Isolate the Right Move"
+              class="w-40 h-40 mb-4"
+            />
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Isolate the Right Move
+            </h3>
+            <blockquote
+              class="font-serif text-base text-gray-600 italic leading-relaxed tracking-normal max-w-xl mx-auto"
+            >
+              “Success is not merely a matter of chance—it becomes virtually
+              inevitable when the essential variables are correctly identified,
+              ordered, and acted upon with strategic precision.”
+              <br />
+              <span class="font-bold">— Law 47, The Law of Probability</span>
+            </blockquote>
+          </div>
+
+          <!-- Tile 2 -->
+          <div
+            class="p-6 flex flex-col items-center text-left taos:opacity-0 taos:translate-y-[40px] duration-[700ms] delay-[100ms]"
+            data-taos-offset="250"
+          >
+            <img
+              src="/images/undraw_time-management_fedt.svg"
+              alt="Compress Years into Days"
+              class="w-40 h-40 mb-4"
+            />
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Compress Time with Structure
+            </h3>
+            <blockquote
+              class="font-serif text-base text-gray-600 italic leading-relaxed tracking-normal max-w-xl mx-auto"
+            >
+              “Leverage is not optional for those who want freedom. It is the
+              only way to multiply impact without multiplying exhaustion.”
+              <br />
+              <span class="font-bold">— Law 34, The Law of the Lever</span>
+            </blockquote>
+          </div>
+
+          <!-- Tile 3 -->
+          <div
+            class="p-6 flex flex-col items-center text-left taos:opacity-0 taos:translate-y-[40px] duration-[700ms] delay-[200ms]"
+            data-taos-offset="250"
+          >
+            <img
+              src="/images/undraw_lightbulb-moment_c8jn.svg"
+              alt="Make Clarity a System"
+              class="w-40 h-40 mb-4"
+            />
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Make Clarity Repeatable
+            </h3>
+            <blockquote
+              class="font-serif text-base text-gray-600 italic leading-relaxed tracking-normal max-w-xl mx-auto"
+            >
+              “True power is not loud—it’s aligned. When your values, actions,
+              and intentions are congruent, your influence becomes undeniable”
+              <br />
+              <span class="font-bold">— Law 28, The Law of Congruency</span>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 px-6 sm:px-10 lg:px-20">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2
+          class="text-3xl font-extrabold text-gray-900 mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms]"
+          data-taos-offset="200"
+        >
+          Lawful Outcomes. Real Mavens.
+        </h2>
+        <p
+          class="text-left text-lg text-gray-700 mb-12 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[100ms]"
+          data-taos-offset="200"
+        >
+          VERITAS doesn't inspire—<span class="italic"
+            >it aligns, compresses, and replicates.</span
+          >
+          VERITAS is for people who make hard calls and can’t wait around for
+          clarity.
+          <span class="italic">It’s for Bellwether Mavens.</span>
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between taos:opacity-0 taos:translate-y-[40px] duration-[700ms]"
+            data-taos-offset="250"
+          >
+            <blockquote class="text-gray-800 italic mb-4">
+              “Working with Veritas has been a powerful accelerator in both my
+              business and my life. It has significantly increased my
+              productivity, replaced ambiguity with clarity, and revealed the
+              practical power of the laws in my day-to-day decisions. The result
+              is sharper focus, more aligned action, and greater decisiveness.
+              Veritas isn’t just about insight—it delivers real transformation,
+              tangible impact, and the confidence that I’m moving in a direction
+              that elevates me, my business, and those I serve.”
+            </blockquote>
+            <div class="mt-auto flex items-center gap-4">
+              <div class="relative w-10 h-10 rounded-full overflow-hidden">
+                <img
+                  src="https://cynthiadavismedia.com/wp-content/uploads/2023/10/C14A1590-560-242x300.jpg"
+                  alt="Cynthia Davis"
+                  class="absolute w-[250%] h-[250%] object-cover"
+                  style="object-position: 65% top"
+                />
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900">Cynthia Davis</p>
+                <p class="text-sm text-gray-600">
+                  Radiant Blue Capital, Florida
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between taos:opacity-0 taos:translate-y-[40px] duration-[700ms] delay-[200ms]"
+            data-taos-offset="250"
+          >
+            <blockquote class="text-gray-800 italic mb-4">
+              “Using Veritas feels like having 24/7 access to the sharpest
+              strategic minds I know—people like Dan, Chase, Cynthia, and
+              Bill—not just individually, but as if all their thinking were
+              fused together, multiplied a hundredfold, and made instantly
+              available without bias or delay. It’s like going from a bike or a
+              car to a helicopter: faster, clearer, and above the noise. I used
+              to rely on time, relationships, and emotional bandwidth to make
+              hard decisions—now I just use Veritas as pure leverage. It started
+              as a tool; now it’s my business partner.”
+            </blockquote>
+            <div class="mt-auto flex items-center gap-4">
+              <img
+                src="https://cdn.gamma.app/ky1ut787ldmmixp/ed2edae6850c43e0a03fffcea77612a5/original/jeff-headshot-2.png"
+                alt="Jeff Wagner"
+                class="w-10 h-10 rounded-full object-cover"
+                style="object-position: center top"
+              />
+              <div>
+                <p class="font-semibold text-gray-900">Jeff Wagner</p>
+                <p class="text-sm text-gray-600">
+                  Entrepreneur, Vancouver Island
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between taos:opacity-0 taos:translate-y-[40px] duration-[700ms] delay-[100ms]"
+            data-taos-offset="250"
+          >
+            <blockquote class="text-gray-800 italic mb-4">
+              “Veritas is a game changer. It helped position ideas into systems.
+              Gave me logic-based reasoning and told me where I could up my
+              game.”
+            </blockquote>
+            <div class="mt-auto flex items-center gap-4">
+              <img
+                src="/images/profiles/1516336148120.jpeg"
+                alt="Michael Permack"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="font-semibold text-gray-900">Michael Permack</p>
+                <p class="text-sm text-gray-600">Realtor, Victoria</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-dark text-white pt-20 pb-10 px-6 sm:px-10 lg:px-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2
+          class="text-3xl font-extrabold mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms]"
+          data-taos-offset="200"
+        >
+          Join VERITAS
+        </h2>
+        <p
+          class="text-left text-lg text-gray-300 mb-6 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[100ms]"
+          data-taos-offset="200"
+        >
+          VERITAS helps serious decision-makers reduce fog, find signal fast,
+          and act lawfully under pressure.
+        </p>
+        <p
+          class="text-left md:text-center text-base text-gray-400 italic mb-10 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[200ms]"
+          data-taos-offset="200"
+        >
+          Bellwether Mavens only. No public tier. No passive users.
+        </p>
+
+        <div
+          class="bg-gray-100 text-gray-800 rounded-xl p-6 max-w-md mx-auto mb-12 shadow-sm taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[300ms]"
+          data-taos-offset="200"
+        >
+          <p class="text-xl font-semibold text-gray-900 mb-2">Membership</p>
+          <p class="text-3xl font-extrabold text-green-500 mb-4">
+            $300<span class="text-base text-gray-700 font-normal">
+              / month</span
+            >
+          </p>
+          <p class="text-sm text-gray-600 mb-4 italic">
+            Now enrolling with a 30-day free trial — available through July 1
+            only.
+          </p>
+          <p class="text-left font-semibold text-gray-800 mb-2">
+            What you get:
+          </p>
+          <ul
+            class="text-left list-disc list-inside text-sm text-gray-700 space-y-1 mb-4"
+          >
+            <li>Decision analysis governed by the 56 Bellwether Laws</li>
+            <li>First-principles reasoning that isolates root causes</li>
+            <li>Recommendations backed by named, cited laws</li>
+            <li>Fork logic that reveals multiple lawful paths when present</li>
+            <li>Tradeoff tools: pros/cons, risk/reward, timing maps</li>
+            <li>Direct quote sourcing from the verified law library</li>
+            <li>Stacked law reflections to surface repeating logic</li>
+            <li>Zero emotional reasoning. No flattery. No guesses.</li>
+          </ul>
+
+          <p class="text-left text-sm text-gray-800 mt-3">
+            <strong>Note:</strong> VERITAS runs inside ChatGPT Plus. You’ll need
+            a
+            <a
+              href="https://openai.com/chatgpt/pricing/"
+              class="text-blue-600 hover:underline transition"
+              target="_blank"
+              rel="noopener noreferrer"
+              >separate subscription</a
+            >
+            to use it.
+          </p>
+
+          <form
+            action="https://buy.stripe.com/4gM4gz0D7bLl3kK5810gw00"
+            method="GET"
+            role="form"
+            aria-label="Activate VERITAS"
+            class="flex flex-col sm:flex-row gap-3 justify-center mt-6"
+          >
+            <button
+              type="submit"
+              class="bg-primary text-white px-8 py-3 font-semibold rounded-md hover:bg-black transition"
+            >
+              Enroll for $300/month
+            </button>
+          </form>
+          <p class="text-sm text-gray-600 mt-4">
+            Already subscribed?
+            <a
+              href="https://billing.stripe.com/p/login/4gM4gz0D7bLl3kK5810gw00"
+              class="text-blue-600 hover:underline"
+              >Manage Billing</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center px-6 py-4">
+      <div class="text-xs text-gray-400 space-y-2">
+        <p class="gap-4">
+          © 2025 Sageframe.ai by Starbuilders Consulting LTD. All rights
+          reserved. &nbsp;|&nbsp;
+          <a
+            href="/privacy"
+            class="underline hover:text-white transition"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Privacy Policy</a
+          >
+          &nbsp;|&nbsp;
+          <a
+            href="/terms"
+            class="underline hover:text-white transition"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Terms of Service</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- JS Logic -->
+    <script>
+      const container = document.getElementById("logo-container");
+
+      fetch("/images/logo.svg")
+        .then((response) => response.text())
+        .then((svgText) => {
+          const parser = new DOMParser();
+          const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
+          const svg = svgDoc.querySelector("svg");
+
+          svg.removeAttribute("width");
+          svg.removeAttribute("height");
+          svg.classList.add(
+            "w-40",
+            "sm:w-56",
+            "md:w-72",
+            "lg:w-[24rem]",
+            "h-auto"
+          );
+
+          container.innerHTML = "";
+          container.appendChild(svg);
+
+          const compass = svg.querySelector("g#compass");
+          const allCircles = svg.querySelectorAll("g#leaves circle");
+
+          // Mouse tracking + flash-speed logic
+          let lastMouseX = null;
+          let lastMouseY = null;
+          let lastMoveTime = performance.now();
+          let movementSpeed = 0;
+          let lastAngle = 0;
+
+          function updateCompass(e) {
+            if (!compass) return;
+
+            const now = performance.now();
+            const rect = container.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const dx = e.clientX - centerX;
+            const dy = e.clientY - centerY;
+
+            let targetAngle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+            // Normalize rotation delta to shortest path
+            let delta = targetAngle - lastAngle;
+            if (delta > 180) delta -= 360;
+            if (delta < -180) delta += 360;
+            const smoothAngle = lastAngle + delta;
+            lastAngle = smoothAngle;
+
+            compass.style.transform = `rotate(${smoothAngle}deg)`;
+
+            // Track mouse speed
+            if (lastMouseX !== null && lastMouseY !== null) {
+              const dist = Math.sqrt(
+                Math.pow(e.clientX - lastMouseX, 2) +
+                  Math.pow(e.clientY - lastMouseY, 2)
+              );
+              const timeDiff = now - lastMoveTime;
+              movementSpeed = dist / Math.max(timeDiff, 1);
+            }
+
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+            lastMoveTime = now;
+          }
+
+          document.addEventListener("mousemove", updateCompass);
+
+          function flashRandomCircles(count = 6) {
+            if (!allCircles.length) return;
+
+            allCircles.forEach((c) => c.classList.remove("flash"));
+
+            const pool = [...allCircles];
+            const flashTargets = [];
+
+            for (let i = 0; i < count && pool.length; i++) {
+              const idx = Math.floor(Math.random() * pool.length);
+              flashTargets.push(pool.splice(idx, 1)[0]);
+            }
+
+            flashTargets.forEach((circle, i) => {
+              const delay = 200 + i * (200 + Math.random() * 200); // 200–600ms between flashes
+              setTimeout(() => {
+                circle.classList.add("flash");
+              }, delay);
+            });
+          }
+
+          function flashLoop() {
+            const normalized = Math.min(movementSpeed / 0.5, 1); // max out at 0.5 px/ms
+            const delay = 1800 - normalized * 300;
+
+            flashRandomCircles(3);
+            setTimeout(flashLoop, delay);
+          }
+
+          flashLoop(); // Begin loop
+        });
+    </script>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        if (window.taos) {
+          window.taos.refresh();
+        }
+      });
+    </script>
+  </body>
+</html>
