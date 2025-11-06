@@ -5,7 +5,7 @@
     <meta property="og:title" content="VERITAS — For Bellwether Members" />
     <meta
       property="og:description"
-      content="A decision system built on the 56 Bellwether Laws. Now available exclusively to Bellwether Members."
+      content="A decision system built on the 52 Bellwether Laws. Now available exclusively to Bellwether Members."
     />
     <meta
       property="og:image"
@@ -17,7 +17,7 @@
     <meta name="twitter:title" content="VERITAS — For Bellwether Members" />
     <meta
       name="twitter:description"
-      content="A decision system built on the 56 Bellwether Laws. Now available exclusively to Bellwether Members."
+      content="A decision system built on the 52 Bellwether Laws. Now available exclusively to Bellwether Members."
     />
     <meta
       name="twitter:image"
@@ -30,7 +30,7 @@
     <title>VERITAS — For Bellwether Members</title>
     <meta
       name="description"
-      content="VERITAS is a private decision system built on the 56 Bellwether Laws. Now available exclusively to Bellwether Members."
+      content="VERITAS is a private decision system built on the 52 Bellwether Laws. Now available exclusively to Bellwether Members."
     />
 
     <!-- Fonts -->
@@ -110,13 +110,20 @@
       }
 
       .bg-dark {
-        background-color: #101d23;
+        background-color: #17232A;
         color: white;
       }
 
       .bg-primary {
-        background-color: #a48328;
+        background-color: #C4911C;
       }
+
+      .header {
+        background-color: black;
+        color: #8F8C79;
+        border-bottom: thin solid currentColor;
+      }
+
     </style>
   </head>
 
@@ -125,6 +132,20 @@
     style="opacity: 0; transition: opacity 0.2s"
     onload="document.body.style.opacity=1;"
   >
+    <!-- Sticky header -->
+    <div class="sticky top-0 z-50 header py-3 px-6 text-left shadow-md">
+      <div class="max-w-6xl mx-auto flex items-center gap-4">
+      <img
+        src="https://thebellwetheralliance.com/wp-content/uploads/2024/08/BW-Logo.png"
+        alt="Sageframe Logo"
+        class="h-10"
+      />
+      <p class="flex-grow text-sm md:text-base leading-relaxed">
+        As the official technology partner of <em>The Bellwether Alliance</em>, Veritas is built off the framework of our 52 Laws and Principles. All products and services offered are exclusive to Veritas.
+      </p>
+      </div>
+    </div>
+    
     <!-- Main Content -->
     <section
       class="flex-grow flex items-center justify-center px-8 py-12"
@@ -147,7 +168,7 @@
             data-taos-offset="0"
             data-taos-once="true"
           >
-            The only AI decision engine built on the 56 Bellwether Laws.
+            The only AI decision engine built on the 52 Bellwether Laws.
           </h2>
           <p
             class="text-lg text-gray-700 leading-relaxed mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[200ms]"
@@ -202,7 +223,7 @@
         >
           <div
             id="logo-container"
-            class="w-40 sm:w-56 md:w-72 lg:w-[24rem] h-auto"
+            class="w-40 sm:w-52 md:w-72 lg:w-[24rem] h-auto"
             role="img"
           >
             <img src="/images/logo.svg" alt="Sageframe Logo" />
@@ -243,7 +264,7 @@
         class="text-lg text-gray-700 leading-relaxed mb-4 taos:opacity-0 taos:translate-y-[40px] duration-[800ms] delay-[100ms]"
         data-taos-offset="200"
       >
-        VERITAS applies the 56 Bellwether Laws to help you cut through noise,
+        VERITAS applies the 52 Bellwether Laws to help you cut through noise,
         isolate constraints, and make the next lawful move—fast.
       </p>
       <!-- TODO Add features here -->
@@ -467,7 +488,7 @@
         See VERITAS in Action
       </h2>
       <div class="w-full max-w-4xl mx-auto">
-        <div class="relative w-full" style="padding-bottom: 56.25%;">
+        <div class="relative w-full" style="padding-bottom: 52.25%;">
           <iframe 
             class="absolute top-0 left-0 w-full h-full" 
             src="https://drive.google.com/file/d/1ODULp4lddFYB0q298IVobfv-FqZHnn62/preview"
@@ -519,7 +540,7 @@
           <ul
             class="text-left list-disc list-inside text-sm text-gray-700 space-y-1 mb-4"
           >
-            <li>Decision analysis governed by the 56 Bellwether Laws</li>
+            <li>Decision analysis governed by the 52 Bellwether Laws</li>
             <li>First-principles reasoning that isolates root causes</li>
             <li>Recommendations backed by named, cited laws</li>
             <li>Fork logic that reveals multiple lawful paths when present</li>
@@ -597,7 +618,7 @@
           svg.removeAttribute("height");
           svg.classList.add(
             "w-40",
-            "sm:w-56",
+            "sm:w-52",
             "md:w-72",
             "lg:w-[24rem]",
             "h-auto"
